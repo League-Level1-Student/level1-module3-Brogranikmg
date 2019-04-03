@@ -13,5 +13,9 @@ public class Director {
 		queue.addMovie(one);
 		queue.addMovie(worms);
 		queue.addMovie(twilight);
+		queue.printMovies();
+		queue.sortMoviesByRating();
+		System.out.println("The best movie is " + queue.getMovie(0).getTitle());
+		System.out.println("The second-best movie is " + queue.getMovie(1).getTitle());
 	}
 }
