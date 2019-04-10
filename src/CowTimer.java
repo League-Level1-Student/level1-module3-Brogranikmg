@@ -15,7 +15,9 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
-
+		CowTimer cow = new CowTimer();
+		cow.setTime(3);
+		cow.start();
 	}
 
 	private int minutes;
@@ -30,13 +32,18 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60 seconds
 		 * using Thread.sleep(int milliseconds).
 		 */
-
+		for (int i = 0; i < minutes; i++) {
+			System.out.println("===");
+			System.out.println(i + " minute(s) have passed.");
+			System.out.println("There are " + (minutes - i) + " minute(s) left.");
+			Thread.sleep(60000);
+		}
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo sound.
 		 * You can use the .wav file in the default package, or you can download one
 		 * from freesound.org, then drag it intothe default package.
 		 */
-
+		playSound("moo.wav");
 	}
 
 	private void playSound(String fileName) {
